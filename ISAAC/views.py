@@ -1,13 +1,12 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 
 # Create your views here.
 
 def indexPageView(request) :
-    return HttpResponse('Welcome to the main page')
+    return render(request, 'ISAAC/index.html')
 
 def ResourcePageView(request) :
-    return HttpResponse('Welcome to the resource database')
+    return render(request, 'ISAAC/resources.html')
 
-def InputPageView(request) :
-    return HttpResponse('Welcome to the input page, where students will be putting their assignment details')
+def AboutPageView(request) :
+    return render(request, 'ISAAC/about.html')
