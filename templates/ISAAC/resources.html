@@ -1,21 +1,5 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
 <p>Resources</p>
-
-<form name="resource_form" method="POST" action="{% url 'resources' %}">
-    {% csrf_token %}
-    <label for='class_title'>Enter class title:</label>
-    <input type="text" name='class_title' id='class_title'>
-    <br><br>
-    <label for='resource'>Enter your resource name:</label>
-    <input type="text" name='resource' id='resource'>
-    <br><br>
-    <label for='link'>Enter url:</label>
-    <input type="text" name='link' id='link'>
-    <br><br>
-    <button type="submit">Submit</button>
-</form>
-
 {% endblock %}
