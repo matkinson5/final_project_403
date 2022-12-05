@@ -2,21 +2,25 @@
 {% load static %}
 {% block content %}
 
-<p>Index</p>
 
-
-<form name="resource_form" method="POST" action="{% url 'resources' %}">
-    {% csrf_token %}
-    <label for='class_title'>Enter class title:</label>
-    <input type="text" name='class_title' id='class_title'>
-    <br><br>
-    <label for='resource'>Enter your resource name:</label>
-    <input type="text" name='resource' id='resource'>
-    <br><br>
-    <label for='link'>Enter url:</label>
-    <input type="text" name='link' id='link'>
-    <br><br>
-    <button type="submit">Submit</button>
-</form>
-
+<div class="container d-flex h-100 align-items-center">
+    <div class="mx-auto text-center">
+        <h2 class="text-white-50 mx-auto mt-2 mb-5">
+            <h1><b> Add a resource </b></h1>
+            <form name="resource_form" method="POST" action="{% url 'index' %}">
+                {% csrf_token %}
+                <label for='class_title'>Class title:</label>
+                <input type="text" name='class_title' id='class_title'>
+                <br><br>
+                <label for='resource'>Resource name:</label>
+                <input type="text" name='resource' id='resource'>
+                <br><br>
+                <label for='link'>url:</label>
+                <input type="text" name='link' id='link'>
+                <br><br>
+                <button type="submit">Submit</button>
+            </form>
+        </h2>
+    </div>
+</div>
 {% endblock %}

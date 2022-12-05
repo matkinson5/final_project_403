@@ -1,0 +1,19 @@
+
+
+<h1><b> Edit </b></h1>
+<form name="resource_form" method="POST" action="{% url 'updateRes' %}">
+    {% csrf_token %}
+    <input type="hidden" id="res_id" name="res_id" value = "{{record.id}}">
+
+    <label for='class_title'>Class title:</label>
+    <input type="text" name='class_title' id='class_title' value="{{record.class_title}}">
+    <br><br>
+    <label for='resource'>Enter your resource name:</label>
+    <input type="text" name='resource' id='resource' value="{{record.resource_name}}">
+    <br><br>
+    <label for='link'>Enter url:</label>
+    <input type="text" name='link' id='link' value="{{record.link}}">
+    <br><br>
+    <button type="submit">Update</button>
+</form>
+
