@@ -1,8 +1,7 @@
 from django.shortcuts import render
 from .models import resources
 
-# Create your views here.
-
+#home page and record input 
 def indexPageView(request) :
     if request.method == 'POST':
 
@@ -16,6 +15,7 @@ def indexPageView(request) :
 
     return render(request, 'ISAAC/index.html')
 
+#dispaly resources
 def ResourcePageView(request) :
     data = resources.objects.all()
 
@@ -23,11 +23,8 @@ def ResourcePageView(request) :
         "res" : data
     }
     return render(request, 'ISAAC/resources.html', context)
-    
 
-def AboutPageView(request) :
-    return render(request, 'ISAAC/about.html')
-
+#get info from record to edit
 def showSingleResourcePageView(request, res_id) :
     data = resources.objects.get(id = res_id)
 
@@ -37,6 +34,7 @@ def showSingleResourcePageView(request, res_id) :
 
     return render(request, 'ISAAC/edit.html', context)
 
+#update exsisting record
 def updateResourcePageView(request) :
     if request.method == 'POST' :
         res_id = request.POST['res_id']
@@ -50,6 +48,7 @@ def updateResourcePageView(request) :
         resource.save()
     return ResourcePageView(request)
 
+#delete record
 def deleteResourcePageView(request, res_id) :
     data = resources.objects.get(id=res_id)
     
