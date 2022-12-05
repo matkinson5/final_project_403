@@ -79,7 +79,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'is_resources',
         'USER': 'postgres',
-        'PASSWORD' : 'poppyField4',
+        'PASSWORD' : 'admin',
         'HOST' : 'localhost'
     }
 }
