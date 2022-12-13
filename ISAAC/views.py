@@ -13,9 +13,18 @@ def indexPageView(request) :
 
         resource.save()
 
-    return render(request, 'ISAAC/index.html')
+        data = resources.objects.all()
 
-#dispaly resources
+        context = {
+            "res" : data
+        }
+
+        return render(request, 'ISAAC/resources.html', context)
+
+    else: 
+        return render(request,'ISAAC/index.html' ) 
+
+#display resources
 def ResourcePageView(request) :
     data = resources.objects.all()
 

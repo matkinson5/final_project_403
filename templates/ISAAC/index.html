@@ -5,22 +5,23 @@
 <!-- add record -->
 <div class="container d-flex h-100 align-items-center">
     <div class="mx-auto text-center">
-        <h2 class="text-white-50 mx-auto mt-2 mb-5">
-            <h1><b> Add a resource </b></h1>
+        <br><br>
             <form name="resource_form" method="POST" action="{% url 'index' %}">
                 {% csrf_token %}
-                <label for='class_title'>Class title:</label>
-                <input type="text" name='class_title' id='class_title'>
+                <label for='class_title'>What class is this for? </label>
+                <input type="text" name='class_title' id='class_title' placeholder = 'ex-403'>
                 <br><br>
-                <label for='resource'>Resource name:</label>
-                <input type="text" name='resource' id='resource'>
+                <label for='resource'>What would you call this resource? </label>
+                <input type="text" name='resource' id='resource' placeholder = 'ex-How to Deploy'>
                 <br><br>
-                <label for='link'>url:</label>
-                <input type="text" name='link' id='link'>
-                <br><br>
-                <button type="submit">Submit</button>
+                <label for='link'>Where can this resource be found? </label>
+                <input type="text" name='link' id='link' placeholder = 'paste the URL here'>
+                <br><br><br>
+                <button class = "btn btn-primary" type="submit">Add it to the database</button>
             </form>
-        </h2>
     </div>
 </div>
+<br>
+<br>
+<br>
 {% endblock %}
